@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	pb "github.com/Manuel11713/go-unary/greet/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
@@ -18,4 +19,7 @@ func main() {
 
 	defer conn.Close()
 
+	client := pb.NewGreetServiceClient(conn)
+
+	doGreet(client)
 }
