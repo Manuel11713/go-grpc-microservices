@@ -14,6 +14,7 @@ message GreetResponse {
 
 service GreetService{
     rpc Greet(GreetRequest)returns (GreetResponse);
+    rpc GreetManyTimes(GreetRequest) returns( stream GreetResponse);
 }
 
 // Generate code: $ protoc -Igreet/proto --go_out=. --go_opt=paths=import --go-grpc_out=. greet/proto/greet.proto
