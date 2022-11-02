@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package primes;
+
+option go_package ="./proto";
+
+message PrimesRequest {
+    int32 number = 1;
+}
+
+message PrimesResponse {
+    int32 prime =1;
+}
+
+service PrimesService {
+    rpc Primes(PrimesRequest) returns (stream PrimesResponse);
+}
+
+
+// Generate code: $ protoc -Iproto --go_out=. --go_opt=paths=import --go-grpc_out=. proto/primes.proto
