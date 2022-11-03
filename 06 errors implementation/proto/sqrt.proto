@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package sqrt;
+
+option go_package ="./proto";
+
+message SqrtRequest{
+    int32 number=1;
+}
+
+message SqrtResponse{
+    double result =1;
+}
+service SqrtService {
+    rpc Sqrt(SqrtRequest) returns (SqrtResponse);
+}
+
+
+// Generate code: $ protoc -Igreet/proto --go_out=. --go_opt=paths=import --go-grpc_out=. greet/proto/greet.proto
