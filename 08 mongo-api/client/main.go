@@ -27,4 +27,6 @@ func main() {
 
 	readBlog(client, "a non valid id")
 
+	updateBlog(client, id)
+
 }
