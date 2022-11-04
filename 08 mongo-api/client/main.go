@@ -31,4 +31,8 @@ func main() {
 
 	listBlogs(client)
 
+	deleteBlog(client, id)
+
+	listBlogs(client)
+
 }
