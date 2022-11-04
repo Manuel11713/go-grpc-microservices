@@ -29,4 +29,6 @@ func main() {
 
 	updateBlog(client, id)
 
+	listBlogs(client)
+
 }
